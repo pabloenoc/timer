@@ -1,0 +1,1 @@
+console.log("Timer script ready to start...");
