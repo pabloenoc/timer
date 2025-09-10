@@ -15,10 +15,11 @@
 
     <input type="text" name="" placeholder="Task Name"> <br>
     <input type="number" name="" id="" style="width: fit-content;" placeholder="0" x-model.number="minutes"> minutes
-    <input type="button" value="OK" @click="start()">
+    <input type="button" value="OK" @click="start()" x-bind:disabled="intervalId !== null">
 
     <div id="countdown-timer" style="margin-top: 2rem; font-size: 4rem; text-align: center;">
-        <span id="minutes" x-text="String(minutes).padStart(2, '0')">00</span>:<span id="seconds" x-text="String(seconds).padStart(2, '0')">00</span>
+        <span id="minutes" x-text="String(minutes).padStart(2, '0')">00</span>:<span id="seconds"
+            x-text="String(seconds).padStart(2, '0')">00</span>
     </div>
 
 </body>
