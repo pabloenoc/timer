@@ -17,7 +17,7 @@
     <input type="button" value="OK">
 
     <div id="countdown-timer" style="margin-top: 2rem; font-size: 4rem; text-align: center;">
-        <span id="minutes" x-text="minutes">00</span>:<span id="seconds">00</span>
+        <span id="minutes" x-text="String(minutes).padStart(2, '0')">00</span>:<span id="seconds">00</span>
     </div>
 
 </body>
