@@ -5,18 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.cyan.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <title>Timer</title>
 </head>
 
-<body class="container">
+<body class="container" x-data="{ minutes: 0 }">
     <h1>Timer</h1>
 
     <input type="text" name="" placeholder="Task Name"> <br>
-    <input type="number" name="" id="" style="width: fit-content;" placeholder="0"> minutes
+    <input type="number" name="" id="" style="width: fit-content;" placeholder="0" x-model="minutes"> minutes
     <input type="button" value="OK">
 
     <div id="countdown-timer" style="margin-top: 2rem; font-size: 4rem; text-align: center;">
-        <span id="minutes">00</span>:<span id="seconds">00</span>
+        <span id="minutes" x-text="minutes">00</span>:<span id="seconds">00</span>
     </div>
 
 </body>
