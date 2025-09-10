@@ -7,7 +7,7 @@ function timer() {
         intervalId: null,
 
         start() {
-            this.minutes = 0;
+            this.minutes = this.minutes;
             this.seconds = 0;
 
             if (this.intervalId !== null) {
