@@ -2,12 +2,13 @@ console.log("Timer script ready to start...");
 
 function timer() {
     return {
+        inputMinutes: 0,
         minutes: 0,
         seconds: 0,
         intervalId: null,
 
         start() {
-            this.minutes = this.minutes;
+            this.minutes = this.inputMinutes;
             this.seconds = 0;
 
             if (this.intervalId !== null) {
