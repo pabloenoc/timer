@@ -14,7 +14,7 @@
     <h1>Timer</h1>
 
     <input type="text" name="" placeholder="Task Name"> <br>
-    <input type="number" name="" id="" style="width: fit-content;" placeholder="0" x-model.number="minutes"> minutes
+    <input type="number" name="" id="" style="width: fit-content;" placeholder="0" x-model.number="minutes" min="0"> minutes
     <input type="button" value="OK" @click="start()" x-bind:disabled="intervalId !== null">
 
     <div id="countdown-timer" style="margin-top: 2rem; font-size: 3rem; text-align: center; font-family: monospace;">
