@@ -16,9 +16,10 @@
         <div x-data="{ permission: Notification.permission }">
 
             <!-- Bell (off) -->
-            <svg x-show="permission !== 'granted'" @click="alert('TODO: Notifications request')" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
-                viewBox="0 0 24 24" fill="none" stroke="#8b8989" stroke-width="1" stroke-linecap="round"
-                stroke-linejoin="round">
+            <svg x-show="permission !== 'granted'"
+                @click="Notification.requestPermission().then(p => permission = p); console.log(permission);"
+                xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                stroke="#8b8989" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
                 <path
                     d="M9.346 5.353c.21 -.129 .428 -.246 .654 -.353a2 2 0 1 1 4 0a7 7 0 0 1 4 6v3m-1 3h-13a4 4 0 0 0 2 -3v-3a6.996 6.996 0 0 1 1.273 -3.707" />
                 <path d="M9 17v1a3 3 0 0 0 6 0v-1" />
@@ -26,8 +27,9 @@
             </svg>
 
             <!--  Bell (on)-->
-            <svg x-show="permission === 'granted'" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
-                stroke="#e68d0b" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+            <svg x-show="permission === 'granted'" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                viewBox="0 0 24 24" fill="none" stroke="#e68d0b" stroke-width="1" stroke-linecap="round"
+                stroke-linejoin="round">
                 <path
                     d="M11.5 17h-7.5a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6a2 2 0 1 1 4 0a7 7 0 0 1 4 6v3c.016 .129 .037 .256 .065 .382" />
                 <path d="M9 17v1a3 3 0 0 0 2.502 2.959" />
