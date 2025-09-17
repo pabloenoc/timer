@@ -60,20 +60,12 @@ if ('serviceWorker' in navigator) {
 
 async function sendNotification() {
     if (!('Notification' in window)) return console.log('Notifications not supported');
-    if (Notification.permission !== 'granted') return console.log('Permission for notifactions not granted yet');
+    if (Notification.permission !== 'granted') return alert('Permission for notifactions not granted yet');
 
     try {
-
         options = {
             body: 'Timer is up!',
-            icon: 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(
-                `<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128">
-     <rect width="100%" height="100%" fill="#ffffff"/>
-     <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-size="64">🚧</text>
-   </svg>`
-            ),
             renotify: false
-
         }
 
         const serviceWorkerRegistration = await navigator.serviceWorker.ready;
