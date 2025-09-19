@@ -8,6 +8,11 @@
     <script defer src="timer.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <title>Timer</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
 </head>
 
 <body class="container" x-data="timer()">
@@ -17,7 +22,8 @@
 
 
             <div x-show="permission !== 'granted'"
-                @click="Notification.requestPermission().then(p => permission = p); console.log(permission);" style="font-family: monospace;">
+                @click="Notification.requestPermission().then(p => permission = p); console.log(permission);"
+                style="font-family: monospace;">
                 Off
                 <!-- Bell (off) -->
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
@@ -30,7 +36,9 @@
             </div>
 
 
-            <div x-show="permission === 'granted'" @click="Notification.requestPermission().then(p => permission = p); console.log(permission);"style="font-family: monospace;">
+            <div x-show="permission === 'granted'"
+                @click="Notification.requestPermission().then(p => permission = p); console.log(permission);"
+                style="font-family: monospace;">
                 On
                 <!--  Bell (on)-->
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
