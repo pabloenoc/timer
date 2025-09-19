@@ -11,10 +11,7 @@ function timer() {
             this.minutes = this.inputMinutes;
             this.seconds = 0;
 
-            if (this.intervalId !== null) {
-                clearInterval(this.intervalId);
-                this.intervalId = null;
-            }
+            this.reset();
 
             this.intervalId = setInterval(() => {
                 if (this.seconds === 0) {
@@ -32,7 +29,7 @@ function timer() {
             }, 1000);
         },
 
-        stop() {
+        reset() {
             if (this.intervalId !== null) {
                 clearInterval(this.intervalId);
                 this.intervalId = null;
